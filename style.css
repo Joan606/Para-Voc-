@@ -1,0 +1,345 @@
+:root {
+  --bg: #05040a;
+  --card-bg: #11101a;
+  --accent: #ff4f9a;
+  --accent-soft: #ff9fcd33;
+  --text: #f5f5f7;
+  --muted: #b3b3c2;
+  --radius: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #281641, #05040a);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1.5rem 2rem;
+}
+
+.hero-content {
+  max-width: 720px;
+  text-align: center;
+  background: linear-gradient(135deg, #181628dd, #0b0913dd);
+  border-radius: 32px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  border: 1px solid #ffffff1a;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--accent-soft), transparent);
+  top: -80px;
+  right: -80px;
+  opacity: 0.9;
+}
+
+.hero-tag {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text {
+  max-width: 540px;
+  margin: 0 auto 1.5rem;
+  color: #e3e3f0;
+}
+
+.hero-message {
+  margin-top: 1.5rem;
+  min-height: 2.2rem;
+  font-style: italic;
+  color: #ffe2f1;
+}
+
+/* BOTÃO */
+
+.btn {
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  box-shadow: 0 12px 30px rgba(255, 79, 154, 0.4);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(255, 79, 154, 0.55);
+  background: #ff357f;
+}
+
+/* SEÇÕES GERAIS */
+
+main {
+  padding: 0 1.5rem 3rem;
+}
+
+.section {
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+  background: var(--card-bg);
+  padding: 2rem 1.8rem;
+  border-radius: var(--radius);
+  border: 1px solid #ffffff1a;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* CARDS */
+
+.cards {
+  background: linear-gradient(135deg, #151326, #0e0c18);
+}
+
+.cards-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.card {
+  background: #0c0a14;
+  border-radius: var(--radius);
+  padding: 1rem 1rem 1.2rem;
+  border: 1px solid #ffffff14;
+}
+
+.card h3 {
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+}
+
+/* MOTIVOS */
+
+.motivos-list {
+  list-style: none;
+  margin-top: 0.9rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.motivos-list li {
+  background: #0b0a13;
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #ffffff10;
+  font-size: 0.95rem;
+}
+
+/* GALERIA */
+
+.galeria {
+  margin-top: 1.3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.foto {
+  height: 130px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.fake-foto {
+  background: linear-gradient(135deg, #ff9fcd, #6a5dff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* RODAPÉ */
+
+.footer {
+  text-align: center;
+  padding: 1.8rem 1.5rem 2.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVO */
+
+@media (min-width: 720px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .section {
+    padding: 2.2rem 2.3rem;
+  }
+
+  .foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .foto {
+    height: 140px;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  .foto:hover img {
+    transform: scale(1.08);
+  }
+
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  .lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+  }
+
+  .highlight {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .highlight.pulse {
+    animation: pulse 0.4s ease-out;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.25);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+/* Botão da música */
+.music-btn {
+  margin-top: 12px;
+  padding: 10px 26px;
+  border-radius: 999px;
+  border: 1px solid #ff4dd8;
+  background: radial-gradient(circle at top, #ff4dd8 0%, #7b2cff 50%, #1a052b 100%);
+  color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(255, 77, 216, 0.7);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.music-btn:hover {
+  transform: translateY(-1px) scale(1.02);
+  filter: brightness(1.05);
+  box-shadow: 0 0 18px rgba(255, 77, 216, 0.9);
+}
+
+.music-btn.playing {
+  border-color: #4dffb5;
+  box-shadow: 0 0 18px rgba(77, 255, 181, 0.9);
+}
+
+/* Corações caindo */
+.hearts-container {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 50;
+}
+
+.heart {
+  position: absolute;
+  color: #ff4dd8;
+  font-size: 1.2rem;
+  opacity: 0.9;
+  text-shadow: 0 0 8px rgba(255, 77, 216, 0.8);
+  animation-name: heart-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes heart-fall {
+  0% {
+    transform: translateY(-10vh) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) scale(1.1);
+    opacity: 0;
+  }
+}
+
+
+
+}
